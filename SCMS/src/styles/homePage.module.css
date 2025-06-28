@@ -1,0 +1,260 @@
+@font-face {
+  font-family: 'Geist Sans';
+  src: url('/fonts/Geist-Regular.woff2') format('woff2');
+  font-weight: 400;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Geist Sans';
+  src: url('/fonts/Geist-Medium.woff2') format('woff2');
+  font-weight: 500;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Geist Sans';
+  src: url('/fonts/Geist-Bold.woff2') format('woff2');
+  font-weight: 700;
+  font-style: normal
+}
+
+@font-face {
+  font-family: 'Vayu Sans Ultra light';
+  src: url('../../fonts/VayuSans-Ultralight.woff2') format('woff2');
+}
+
+.container {
+    /* font-weight: 100;     */
+    background-color: black;
+    min-height: 100vh;
+    padding: 20px;
+    color: white;
+    position: relative;
+    overflow: hidden;  
+}
+
+.container::after {
+  content: "NEXLEARN";
+  position: fixed;
+  bottom: 8%;
+  left: 50%;
+  transform: translateX(-50%);
+  font-size: 22vw;
+  font-weight: 500;
+  color: transparent; /* No fill */
+  -webkit-text-stroke: 1px #5d5a5a; /* Outline matches your bg color */
+  /* text-stroke: 1.5px #1a1919;         Fallback */
+  -webkit-mask-image: linear-gradient(to top, transparent 25%, rgba(0, 0, 0, 0.5) 70%, black 100%);
+  mask-image: linear-gradient(to top, transparent 0%, rgba(0, 0, 0, 0.5) 60%, black 80%);
+  mask-type: luminance;
+  z-index: 0;
+  pointer-events: none;
+  white-space: nowrap;
+  line-height: 0.8;
+  opacity: 1; /* Faded effect */
+}
+
+
+/* .welcome-heading {
+  font-family: 'Geist Sans', sans-serif;
+  color: rgb(163, 163, 163);
+  text-align: center;
+  font-size: 6rem;
+  font-weight: 400;
+  position: relative;
+  margin: 6rem auto 30px auto;
+} */
+    
+  .welcomeWidget {
+  background-color: black; /* Match your site background */
+  color: white;
+  border-radius: 10px;
+  width: 500px;
+  padding: 1rem;
+  border: 1px solid #4a4a4a;   /* Light grey border */
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.5);
+  font-family: 'Vayu Sans Ultra light', monospace;
+  overflow-x: auto;
+  margin-top: 3rem;
+}
+
+.widgetHeader {
+  position: relative;
+  display: flex;
+  align-items: center;
+  height: 40px;
+  margin-bottom: 1rem;
+}
+
+.widgetHeader span {
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  display: inline-block;
+  margin-right: 8px;
+}
+
+.red {
+  background-color: #ff5f56;
+}
+
+.yellow {
+  background-color: #ffbd2e;
+}
+
+.green {
+  background-color: #27c93f;
+}
+
+.widgetTitle {
+  color: #4cd42a;
+  font-size: 0.9rem;
+  position: absolute;
+  left: 36%;
+  transform: translateX(-50%);
+  font-family: 'Geist Sans', monospace;
+  white-space: nowrap;
+  font-weight: 600;
+}
+
+.widgetContent {
+  white-space: pre-wrap;
+  line-height: 1.6;
+  color: #c5c5c5;
+  font-size: 0.95rem;
+  overflow: hidden;
+  /* border-right: 2px solid #c5c5c5; */
+  /* width: 0; 
+  animation: typing 3s steps(80, end) forwards, blink 0.7s step-end infinite; */
+  }
+
+/* @keyframes typing {
+  from { width: 0; }
+  to { width: 100%; }
+}
+
+@keyframes blink {
+  50% { border-color: transparent; }
+} */
+
+  .header {
+    display: flex;
+    /* justify-content: space-between; */
+    align-items: center;
+    padding: 1rem 0;
+    margin-bottom: 1rem;
+    position: relative;
+    z-index: 1;
+  }
+
+.nav {
+  display: flex;
+  gap: 2rem;
+  align-items:start
+}
+
+.navItem {
+  font-family: 'Vayu Sans Ultra light', sans-serif;
+  color: rgb(210, 205, 205);
+  text-decoration: none;
+  font-weight: 100;
+  font-size: 1rem;
+  transition: opacity 0.2s ease;
+  letter-spacing: 0.7px;
+}
+
+.navItem:hover {
+  opacity: 0.5;
+}
+  
+  .logo {
+    width: 200px;
+  }  
+
+  .profileBtn {
+    width: 45px;
+    height: 45px;
+    border-radius: 50%;
+    object-fit: cover;
+    cursor: pointer;
+  }  
+
+  .mainContent {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  z-index: 2;
+}
+  
+  /* .cardsContainer {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 20px;
+    padding: 0 10%;
+    position: relative;
+    z-index: 1;
+  } */
+  
+  /* .card {
+    background-color: #ffffff;
+    border-radius: 20px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.08);
+    padding: 40px;
+    text-decoration: none;
+    color: #333;
+    transition: transform 0.2s ease;
+  }
+  
+  .card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.12);
+  }
+  
+  .card h3 {
+    font-size: 1.4rem;
+    margin-bottom: 10px;
+  }
+  
+  .card p {
+    font-size: 1rem;
+    color: #666;
+  } */
+
+/* Adding gradient background and button styling */
+/* .card {
+    background-image: linear-gradient(to right, #1d272d 0%, #3c474d 51%, #3d4448 100%);
+    margin: 10px;
+    padding: 15px 45px;
+    text-align: center;
+    text-transform: uppercase;
+    transition: 0.5s;
+    background-size: 200% auto;
+    color: white;            
+    border-radius: 10px;
+    display: block;
+    text-decoration: none;
+}
+
+.card:hover {
+    background-position: right center;
+    color: #fff;
+    text-decoration: none;
+    transform: translateY(-5px);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.12);
+}
+
+.card h3 {
+    font-size: 1.4rem;
+    margin-bottom: 10px;
+}
+
+.card p {
+    font-size: 1rem;
+    color: #fff; 
+} */
+ 
+
+

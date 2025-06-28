@@ -1,0 +1,226 @@
+@font-face {
+  font-family: 'Myriad Pro';
+  src: url('../fonts/MyriadPro-Regular.woff2') format('woff2'),
+       url('../fonts/MyriadPro-Regular.woff') format('woff'),
+       url('../public/fonts/MYRIADPRO-REGULAR.OTF') format('opentype');
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html, body {
+  height: 100%;
+  background-color: var(--bg-color); 
+  color: var(--text-color);
+  font-family: "Myriad Pro", -apple-system, BlinkMacSystemFont, sans-serif;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.container {
+  --bg-color: #1a1919;
+  --text-color: white;
+  --user-msg-bg: #4b4b4b;
+  --bot-msg-bg: #2d2d2d;
+  --input-bg: #5e5e5e;
+  --secondary-text: #c1bbbb;
+
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  background-color: var(--bg-color);
+}
+
+.header {
+  width: 100%;
+  padding: 1.25rem;
+}
+
+.logo {
+  width: 10rem;
+  height: auto;
+}
+
+.chatWrapper {
+  max-width: 50rem;
+  margin: 0 auto;
+  width: 100%;
+  padding: 0 1.25rem;
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+}
+
+.centerPrompt {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  gap: 2rem;
+}
+
+.title {
+  color: var(--secondary-text);
+  font-size: 1.75rem;
+  font-weight: 400;
+}
+
+/* Center prompt input container */
+.centerPrompt .inputContainer {
+  width: 100%;
+  max-width: 500px;
+  margin-top: 1.5rem;
+  height: 55px; /* Consistent height */
+}
+
+/* Main input container (chat view) */
+.inputContainer {
+  display: flex;
+  align-items: center;
+  padding: 0.5rem 0.875rem; /* Reduced vertical padding */
+  background-color: var(--input-bg);
+  border-radius: 0.9rem; /* Slightly more rounded */
+  margin: 1rem 0;
+  width: 100%;
+  height: 55px; /* Fixed height */
+}
+
+.inputBox {
+  flex: 1;
+  border: none;
+  outline: none;
+  font-size: 1rem;
+  padding: 0.5rem 0.75rem; /* Reduced padding */
+  background: transparent;
+  color: var(--text-color);
+  border-radius: 1rem;
+  min-width: 300px;
+  height: 100%; /* Take full height of container */
+  box-sizing: border-box;
+}
+
+.container .messageContainer {
+  flex: 1;
+  overflow-y: auto;
+  padding: 1.25rem 0;
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+  scroll-behavior: smooth;
+  color: white;
+}
+
+.container .message {
+  max-width: 75%;
+  padding: 0.75rem 1.6rem;
+  border-radius: 1rem;
+  font-size: 0.9375rem;
+  line-height: 1.5;
+  word-wrap: break-word;
+}
+
+.userMessage {
+  align-self: flex-end;
+  background-color: var(--user-msg-bg);
+  border-bottom-right-radius: 0;
+}
+
+.botMessage {
+  align-self: flex-start;
+  background-color: var(--bot-msg-bg);
+  border-bottom-left-radius: 0;
+}
+
+.typingDots {
+  display: inline-flex;
+  gap: 0.25rem;
+}
+
+.typingDots span {
+  display: inline-block;
+  width: 0.5rem;
+  height: 0.5rem;
+  border-radius: 50%;
+  background-color: var(--text-color);
+  animation: bounce 1.4s infinite ease-in-out;
+}
+
+.typingDots span:nth-child(1) {
+  animation-delay: 0s;
+}
+
+.typingDots span:nth-child(2) {
+  animation-delay: 0.2s;
+}
+
+.typingDots span:nth-child(3) {
+  animation-delay: 0.4s;
+}
+
+@keyframes bounce {
+  0%, 60%, 100% { transform: translateY(0); }
+  30% { transform: translateY(-0.25rem); }
+}
+
+.sendButton {
+  width: 2.75rem;
+  height: 2.5rem;
+  margin-left: 0.625rem;
+  cursor: pointer;
+  transition: transform 0.2s ease, opacity 0.2s ease;
+}
+
+.sendButton:hover {
+  transform: scale(1.1);
+  opacity: 0.85;
+}
+
+.sendButton:active {
+  transform: scale(0.95);
+}
+
+@media (max-width: 48rem) {
+  .header {
+    padding: 1rem;
+  }
+  
+  .logo {
+    width: 8rem;
+  }
+  
+  .chatWrapper {
+    padding: 0 1rem;
+  }
+  
+  .message {
+    max-width: 85%;
+  }
+  
+  .title {
+    font-size: 1.5rem;
+  }
+
+  .centerPrompt .inputContainer,
+  .inputContainer {
+    max-width: 100%;
+  }
+
+  .inputBox {
+    min-width: 200px;
+  }
+}
+
+@media (max-width: 400px) {
+  .inputBox {
+    min-width: 150px;
+  }
+}
