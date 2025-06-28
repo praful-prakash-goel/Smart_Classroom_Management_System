@@ -9,7 +9,7 @@ This platform creates a dynamic and adaptable ecosystem, responding to the uniqu
 Educators can prioritize what truly matters by regularly checking insights of students and providing necessary help. This software suite leverages interactive tools, digital resources, and collaborative spaces, all designed to enhance student engagement and creativity.
 Key features include facial recognition, providing real-time attendance reports to both educators and students. Additionally, the platform provides resource management, to detect any overlaps of resource usage which may exist while scheduling lectures, checking availability status of various resources.
 
-## How to Import scms_db in MySQL Workbench
+## How to Import database in MySQL Workbench (scms_updated)
 #### Prerequisites
 - MySQL Server installed
 - MySQL Workbench installed
