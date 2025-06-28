@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Student Performance Prediction</title>
+    <style>
+        body { font-family: Arial, sans-serif; padding: 20px; background-color: #f4f4f4; }
+        h1 { color: #333; }
+        .container { background: #fff; padding: 20px; border-radius: 8px; max-width: 700px; margin: auto; box-shadow: 0 2px 5px rgba(0,0,0,0.1); }
+        table { width: 100%; border-collapse: collapse; margin-top: 20px; }
+        th, td { border: 1px solid #ccc; padding: 8px; text-align: center; }
+        th { background-color: #f2f2f2; }
+        .summary { margin-top: 20px; }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Upload Student Data Excel</h1>
+        <form id="uploadForm">
+            <input type="file" id="fileInput" accept=".xlsx,.xls" required />
+            <button type="submit">Upload & Predict</button>
+        </form>
+
+        <div class="summary" id="summary"></div>
+        <div id="results"></div>
+    </div>
+
+    <script>
+        document.getElementById("uploadForm").addEventListener("submit", async function (e) {
+            e.preventDefault();
+            const fileInput = document.getElementById("fileInput");
+            if (fileInput.files.length === 0) return alert("Please select an Excel file.");
+
+            const formData = new FormData();
+            formData.append("file", fileInput.files[0]);
+
+            const res = await fetch("http://localhost:5000/submit", {
+                method: "POST",
+                body: formData
+            });
+
+            const data = await res.json();
+            if (data.status !== "ok") {
+                alert(data.message || "An error occurred.");
+                return;
+            }
+
+            // Summary Section
+            document.getElementById("summary").innerHTML = `
+                <h3>Summary</h3>
+                <p><strong>Total Students:</strong> ${data.summary.total_students}</p>
+                <p><strong>Top Performers:</strong> ${data.summary.top_performers.join(", ") || "None"}</p>
+                <p><strong>At Risk:</strong> ${data.summary.at_risk.join(", ") || "None"}</p>
+            `;
+
+            // Results Table
+            let html = `
+                <h3>Full Results</h3>
+                <table>
+                    <thead>
+                        <tr><th>Student ID</th><th>Performance</th></tr>
+                    </thead>
+                    <tbody>
+            `;
+            for (const row of data.full_results) {
+                html += `<tr><td>${row.Student_ID}</td><td>${row.Performance}</td></tr>`;
+            }
+            html += `</tbody></table>`;
+            document.getElementById("results").innerHTML = html;
+        });
+    </script>
+</body>
+</html>
