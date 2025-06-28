@@ -80,3 +80,35 @@ Launch MySQL Workbench and connect to your MySQL server.
 - **Large files**: For very large backups, consider using command line:
   ```bash
   psql -U username -d scms_db -f backupfile.sql
+
+## Facial Recognition Attendance System
+
+#### Prerequisites
+- Anaconda or Miniconda installed
+- `requirements.txt` file in your project directory
+
+#### Steps to Set Up and Run the Project
+
+##### 1. Create Conda Environment
+Open Anaconda Prompt and run:
+```bash
+conda create --name face_env python=3.8
+```
+##### 2. Activate the Environment
+```bash
+conda activate face_env
+```
+##### 3. Navigate to Project Directory
+```bash
+cd path/to/Face_attendance
+```
+(Replace path/to/Face_attendance with your actual project path)
+##### 4. Install Requirements
+```bash
+pip install -r requirements.txt
+```
+##### 5. 5. Run the Application
+```bash
+python main.py
+```
+
