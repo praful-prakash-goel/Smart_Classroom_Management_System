@@ -9,7 +9,7 @@ This platform creates a dynamic and adaptable ecosystem, responding to the uniqu
 Educators can prioritize what truly matters by regularly checking insights of students and providing necessary help. This software suite leverages interactive tools, digital resources, and collaborative spaces, all designed to enhance student engagement and creativity.
 Key features include facial recognition, providing real-time attendance reports to both educators and students. Additionally, the platform provides resource management, to detect any overlaps of resource usage which may exist while scheduling lectures, checking availability status of various resources.
 
-## How to Import database in MySQL Workbench (scms_updated)
+## How to Import database in MySQL Workbench (scms_database_updated.sql)
 #### Prerequisites
 - MySQL Server installed
 - MySQL Workbench installed
@@ -42,5 +42,41 @@ Launch MySQL Workbench and connect to your MySQL server.
 1. In the Navigator panel, under "SCHEMAS", refresh (right-click > Refresh All)
 2. Verify your database and tables appear
 .
-## Setting up postgresql database
-- download and open pgAdmin 4 then create a new database named scms_db now right click on it and click on restore then select the .sql file and hit enter 
+# PostgreSQL Database Setup Guide
+
+## Prerequisites
+- PostgreSQL installed
+- pgAdmin 4 installed
+- Database backup file (.sql format)
+
+## Steps to Create and Restore Postgresql Database (Postgresql_scms_db.sql)
+
+##### Step 1: Launch pgAdmin 4
+1. Open pgAdmin from your applications menu
+2. Connect to your PostgreSQL server by entering your password
+
+##### Step 2: Create a New Database
+1. Right-click on "Databases" in the Browser panel
+2. Select `Create` > `Database...`
+3. In the dialog:
+   - Enter database name: `scms_db`
+   - Click `Save`
+
+##### Step 3: Restore Database from Backup
+1. Right-click on the newly created `scms_db` database
+2. Select `Restore...`
+3. In the Restore dialog:
+   - Under "Filename", click the folder icon
+   - Browse and select your `.sql` backup file
+   - Click `Select`
+4. Click the `Restore` button to begin the process
+
+##### Step 4: Verify Restoration
+1. Expand `scms_db` in the Browser panel
+2. Check that all expected tables and objects are present
+
+##### Troubleshooting
+- **Permission errors**: Ensure your user has create/restore privileges
+- **Large files**: For very large backups, consider using command line:
+  ```bash
+  psql -U username -d scms_db -f backupfile.sql
