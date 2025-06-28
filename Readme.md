@@ -42,14 +42,14 @@ Launch MySQL Workbench and connect to your MySQL server.
 1. In the Navigator panel, under "SCHEMAS", refresh (right-click > Refresh All)
 2. Verify your database and tables appear
 .
-# PostgreSQL Database Setup Guide
+## PostgreSQL Database Setup Guide
 
-## Prerequisites
+#### Prerequisites
 - PostgreSQL installed
 - pgAdmin 4 installed
 - Database backup file (.sql format)
 
-## Steps to Create and Restore Postgresql Database (Postgresql_scms_db.sql)
+#### Steps to Create and Restore Postgresql Database (Postgresql_scms_db.sql)
 
 ##### Step 1: Launch pgAdmin 4
 1. Open pgAdmin from your applications menu
