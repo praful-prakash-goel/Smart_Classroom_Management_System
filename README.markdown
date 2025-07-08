@@ -1,6 +1,6 @@
 # Smart Classroom Management System (SCMS)
 
-### DEMO LINK: https://drive.google.com/file/d/1s7pt_QT9GFzwCyn6nAqEiGDDacm7gzSk/view?usp=drivesdk
+### [DEMO LINK](https://drive.google.com/file/d/1s7pt_QT9GFzwCyn6nAqEiGDDacm7gzSk/view?usp=drivesdk)
 ## Overview
 The Smart Classroom Management System (SCMS) is a sophisticated solution designed to revolutionize the educational environment by harmonizing technology with teaching. It addresses the inefficiencies of traditional classroom management by automating attendance, resource scheduling, and providing data-driven insights to enhance learning experiences and operational efficiency. This platform creates a dynamic and adaptable ecosystem, responding to the unique needs of each student and educator. Key features include facial recognition for real-time attendance tracking, resource management to prevent scheduling conflicts, performance insights, code analysis, extra class scheduling, and a student/teacher chatbot for enhanced communication. Additionally, it integrates with Knowlio for advanced AI-driven functionalities.
 
