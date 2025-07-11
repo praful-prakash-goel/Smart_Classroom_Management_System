@@ -1,4 +1,4 @@
-# Smart Classroom Management System (SCMS)
+# NexLearn : Smart Classroom Management System (SCMS)
 
 ### [DEMO LINK](https://drive.google.com/file/d/1s7pt_QT9GFzwCyn6nAqEiGDDacm7gzSk/view?usp=drivesdk)
 ## Overview
